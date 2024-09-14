@@ -113,7 +113,31 @@ button:hover {
         } #popup-text {
                 color: 	rgb(255, 34, 34);
             }
-        }
+
+            #home {
+                background-color: rgb(1, 83, 103);
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                border-radius: 12px;
+                max-width: 250px;
+                transition: all 0.2s ease-in-out;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            #home:hover {
+                background-color: rgb(196, 35, 224);
+                transform: translateY(-3px) scale(1.05);
+            }
 </style>
     <div id="sound-popup" class="popup">
   <div class="popup-content">
@@ -121,6 +145,7 @@ button:hover {
     <button id="thanks-button">Thanks!</button>
   </div>
 </div>
+<a href="https://freakybob.site"><button id="home">Go to the main site! (freakybob.site)</button></a>
 <h1>Welcome to the Freakyblog!</h1>
 <h2>A blog for all things freakybob.site!</h2>
 <p id="para1">--------------------------------------------------------------------------</p>
