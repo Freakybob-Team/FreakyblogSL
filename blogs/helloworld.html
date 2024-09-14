@@ -57,8 +57,8 @@
             font-size: 16px;
             margin: 4px 2px;
       position: absolute;
-  top: 10px;  /* Adjust this value as needed */
-  left: 10px; /* Adjust this value as needed */
+  top: 10px;
+  left: 10px;
             cursor: pointer;
             border-radius: 12px;
             transition: all 0.2s ease-in-out;
@@ -68,10 +68,32 @@
             background-color: rgb(196, 35, 224);
             transform: translateY(-3px) scale(1.05);
 }
+    
+.bannerdiv {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-height: 20vh; 
+  overflow: hidden; 
+}
+
+.banner {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: auto;
+}
+
+
 </style>
 </head>
 <body>
     <a href="../index.html"><button id="home">Freakyblog Home</button></a>
+      <div class="bannerdiv">
+    <img src="https://i.ibb.co/stHwsQq/freaky.png" class="banner">
+  </div>
 <h1>Hello World!</h1>
 <p id="para1">Written by: <strong>Wish</strong></p>
 <p id="para2">Hello! This is our official blog, which will showcase a number of things, such as freakybob.site updates, community acheivements, and other stuff too!</p>
