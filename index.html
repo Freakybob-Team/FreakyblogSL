@@ -146,6 +146,7 @@ button:hover {
     <button id="thanks-button">Thanks!</button>
   </div>
 </div>
+    <button id="mute-button">Mute</button>
 <a href="https://freakybob.site"><button id="home">Go to the main site! (freakybob.site)</button></a>
 <h1>Welcome to the Freakyblog!</h1>
 <h2>A blog for all things freakybob.site!</h2>
@@ -164,7 +165,16 @@ button:hover {
 document.addEventListener('DOMContentLoaded', () => {
     const popup = document.getElementById('sound-popup');
     const thanksButton = document.getElementById('thanks-button');
+    const muteButton = document.getElementById('mute-button');
     const music = new Audio('audio/19 Transfer Tool Menus.mp3');
+
+    const isMuted = document.cookie.split(';').some(item => item.trim().startsWith('audioMuted='));
+
+    if (isMuted) {
+        music.muted = true;
+        muteButton.textContent = 'Unmute';
+        muteButton.classList.add('muted');
+    }
 
     thanksButton.addEventListener('click', () => {
         popup.classList.add('fade-out');
@@ -172,6 +182,19 @@ document.addEventListener('DOMContentLoaded', () => {
             popup.remove();
             music.play();
         }, 3000);
+    });
+
+    muteButton.addEventListener('click', () => {
+        music.muted = !music.muted;
+        if (music.muted) {
+            document.cookie = "audioMuted=true; path=/";
+            muteButton.textContent = 'Unmute';
+            muteButton.classList.add('muted');
+        } else {
+            document.cookie = "audioMuted=false; path=/";
+            muteButton.textContent = 'Mute';
+            muteButton.classList.remove('muted');
+        }
     });
 });
 </script>
