@@ -127,17 +127,17 @@ button:hover {
 <audio src="audio/19 Transfer Tool Menus.mp3" loop></audio>  
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('sound-popup');
-  const thanksButton = document.getElementById('thanks-button');
-  const music = new Audio('audio/19 Transfer Tool Menus.mp3');
+    const popup = document.getElementById('sound-popup');
+    const thanksButton = document.getElementById('thanks-button');
+    const music = new Audio('audio/19 Transfer Tool Menus.mp3');
 
-  thanksButton.addEventListener('click', () => {
-    popup.classList.add('fade-out');
-    setTimeout(() => {
-      popup.remove();
-      music.play();
-    }, 3000);
-  });
+    thanksButton.addEventListener('click', () => {
+        popup.classList.add('fade-out');
+        setTimeout(() => {
+            popup.remove();
+            music.play();
+        }, 3000);
+    });
 });
 </script>
 </body>
