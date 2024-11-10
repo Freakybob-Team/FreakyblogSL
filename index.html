@@ -78,83 +78,7 @@ button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 6px 8px rgba(3,102,102,255);
 }
-    .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
-
-        .popup.fade-out {
-            opacity: 0;
-        }
-
-        .popup-content {
-            background: rgb(33, 75, 90);
-            padding: 25px;
-            text-align: center;
-            border-radius: 12px;
-            max-width: 90%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.9s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        } #popup-text {
-                color: 	rgb(222, 233, 14);
-            }
-
-            #home {
-                background-color: rgb(1, 83, 103);
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                cursor: pointer;
-                border-radius: 12px;
-                max-width: 250px;
-                transition: all 0.2s ease-in-out;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            #home:hover {
-                background-color: rgb(196, 35, 224);
-                transform: translateY(-3px) scale(1.05);
-            }
-    #mute-button {
-        top: 25%;
-    }
 </style>
-    <div id="sound-popup" class="popup">
-  <div class="popup-content">
-    <p id="popup-text"><strong>Welcome to the Freakyblog!</strong></p>
-    <button id="thanks-button">Thanks!</button>
-  </div>
-</div>
-    <button id="mute-button">Mute</button>
 <a href="https://freakybob.site"><button id="home">Go to the main site! (freakybob.site)</button></a>
 <h1>Welcome to the Freakyblog!</h1>
 <h2>A blog for all things freakybob.site!</h2>
@@ -176,44 +100,6 @@ button:hover {
 <a href="blogs/blogsn1"><button>Read more</button></a>
 <h3>Freakybob and Firefox; dropping Addons store version</h3>
 <p id="para2">We regret to inform you that the Freakybob Extension will no longer be present on the Mozilla Addons store.</p>
-<a href="blogs/firefox"><button>Read more</button></a>
-<audio src="audio/19 Transfer Tool Menus.mp3" loop></audio>  
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const popup = document.getElementById('sound-popup');
-    const thanksButton = document.getElementById('thanks-button');
-    const muteButton = document.getElementById('mute-button');
-    const music = new Audio('audio/19 Transfer Tool Menus.mp3');
-
-    const isMuted = document.cookie.split(';').some(item => item.trim().startsWith('audioMuted='));
-
-    if (isMuted) {
-        music.muted = true;
-        muteButton.textContent = 'Unmute';
-        muteButton.classList.add('muted');
-    }
-
-    thanksButton.addEventListener('click', () => {
-        popup.classList.add('fade-out');
-        setTimeout(() => {
-            popup.remove();
-            music.play();
-        }, 2000);
-    });
-
-    muteButton.addEventListener('click', () => {
-        music.muted = !music.muted;
-        if (music.muted) {
-            document.cookie = "audioMuted=true; path=/";
-            muteButton.textContent = 'Unmute';
-            muteButton.classList.add('muted');
-        } else {
-            document.cookie = "audioMuted=false; path=/";
-            muteButton.textContent = 'Mute';
-            muteButton.classList.remove('muted');
-        }
-    });
-});
-</script>
+<a href="blogs/firefox"><button>Read more</button></a>)
 </body>
 </html>
