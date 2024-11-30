@@ -1,8 +1,8 @@
 # Pushes the contents of the repo to the Codeberg mirror
-name: Mirror to Gitea
+name: Mirror to Codeberg
 on: push
 jobs:
-  gitea:
+  codeberg:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
