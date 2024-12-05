@@ -79,6 +79,8 @@
         border-color: rgba(33, 65, 139, 0.321);
         border-style: solid;
         pointer-events: none;
+        z-index: 7;
+        
     }
     .sidebar a {
         color: white;
@@ -116,6 +118,8 @@
     #menu-button:hover {
         background-color: rgba(24, 175, 177, 0.529);
     }
+    .comments {
+        z-index: auto;
     @media screen and (max-width: 600px) {
         h1 {
             font-size: x-large;
@@ -128,9 +132,6 @@
         }
         .posted {
             font-size: 0.9em;
-        }
-        .comments {
-            display: none;
         }
 
     }
@@ -158,7 +159,7 @@
     </div>
 
 
-    <div  data-lyket-type="updown" data-lyket-id="comments"></div>
+    <div  data-lyket-type="updown" data-lyket-id="comments" class="comments"></div>
     <script src="https://utteranc.es/client.js"
           repo="Freakybob-Team/Freakyblog"
           issue-number="12"
